@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harold M. Bonilla López | Técnico en Estructuras Aeronáuticas</title>
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2c5282;
+            --light-color: #e2e8f0;
+            --accent-color: #4299e1;
+            --text-color: #2d3748;
+            --section-padding: 4rem 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        header {
+            /* background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); */
+            background-image: url("./img/Ingenieria-aeronautica-04-1.jpg");
+            background-size: cover;
+            color: white;
+            padding: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid white;
+            background-color: var(--light-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+
+        .profile-img span {
+            font-size: 4rem;
+            color: var(--primary-color);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-item i {
+            font-size: 1.2rem;
+        }
+
+        section {
+            padding: var(--section-padding);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 0.5rem auto;
+        }
+
+        .about {
+            background-color: white;
+        }
+
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .about-icon {
+            min-width: 2.5rem;
+            height: 2.5rem;
+            background-color: var(--light-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+        }
+
+        .skills {
+            background-color: var(--light-color);
+        }
+
+        .skills-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .skill-category h3 {
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .skill-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        .education {
+            background-color: white;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--light-color);
+            top: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        .timeline-item {
+            padding-left: 2.5rem;
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            border: 4px solid white;
+            left: -10px;
+            top: 0;
+            z-index: 1;
+        }
+
+        .timeline-content {
+            padding: 1.5rem;
+            background-color: var(--light-color);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .timeline-year {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 5px;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+        }
+
+        .timeline-institution {
+            font-style: italic;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .certifications {
+            background-color: var(--light-color);
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .cert-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .cert-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .cert-body {
+            padding: 1.5rem;
+        }
+
+        .cert-title {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+        }
+
+        .cert-issuer {
+            font-style: italic;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+        }
+
+        .cert-date {
+            font-size: 0.875rem;
+            color: #718096;
+        }
+
+        .cert-id {
+            font-size: 0.75rem;
+            color: #718096;
+            margin-top: 0.5rem;
+            word-break: break-all;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .cta-button:hover {
+            background-color: #2b6cb0;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem 0;
+            }
+
+            .header-content {
+                padding: 2rem 0;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .timeline::after {
+                left: 2rem;
+            }
+
+            .timeline-item {
+                padding-left: 4.5rem;
+            }
+
+            .timeline-item::before {
+                left: 1.92rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="profile-img">
+                    <span>HB</span>
+                </div>
+                <h1>Harold M. Bonilla López</h1>
+                <h2>Técnico en Estructuras Aeronáuticas</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+506 87356220</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>hmbonilla@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Costa Rica</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">Perfil Profesional</h2>
+            <div class="about-content">
+                <div class="about-item">
+                    <div class="about-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div>
+                        <h3>Mecánica general básica de aviación</h3>
+                        <p>Experiencia en mantenimiento y mecánica de aviación con conocimiento completo de sistemas y
+                            componentes aeronáuticos.</p>
+                    </div>
+                </div>
+                <div class="about-item">
+                    <div class="about-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <div>
+                        <h3>Reparaciones estructurales (Sheet Metal)</h3>
+                        <p>Especialista en reparación y mantenimiento de estructuras de aeronaves, con amplia
+                            experiencia como Laminero de Aviación.</p>
+                    </div>
+                </div>
+                <div class="about-item">
+                    <div class="about-icon">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <div>
+                        <h3>Soporte técnico y Mantenimiento preventivo</h3>
+                        <p>Experimentado en el mantenimiento preventivo para estructuras de aviación, interpretación de
+                            planos específicos y uso de manuales técnicos (SRM).</p>
+                    </div>
+                </div>
+                <div class="about-item">
+                    <div class="about-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div>
+                        <h3>Habilidades técnicas e informáticas</h3>
+                        <p>Combinación única de experiencia en aviación con formación en sistemas informáticos y
+                            desarrollo de software, autodidacta con facilidad para aprender nuevas tecnologías.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills">
+        <div class="container">
+            <h2 class="section-title">Habilidades</h2>
+            <div class="skills-content">
+                <div class="skill-category">
+                    <h3>Aviación</h3>
+                    <ul class="skill-list">
+                        <li>Experiencia como Laminero de Aviación</li>
+                        <li>Conocimientos de Manuales Técnicos (SRM)</li>
+                        <li>Interpretación de planos específicos</li>
+                        <li>Conocimientos de herramientas y equipo de trabajo</li>
+                        <li>Reparaciones estructurales</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Informática</h3>
+                    <ul class="skill-list">
+                        <li>Conocimiento de paquetes de cómputo (Ms Office)</li>
+                        <li>Desarrollo de Software</li>
+                        <li>Programación en Java</li>
+                        <li>Administración de Bases de Datos DB2</li>
+                        <li>Diseño Asistido por Computadora (AutoCAD)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Profesionales</h3>
+                    <ul class="skill-list">
+                        <li>Autogestión eficaz durante proyectos independientes</li>
+                        <li>Colaboración en equipo</li>
+                        <li>Adaptabilidad</li>
+                        <li>Autodidacta</li>
+                        <li>Facilidad para aprender nuevas tecnologías</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Idiomas</h3>
+                    <ul class="skill-list">
+                        <li>Español (Lengua Materna)</li>
+                        <li>Inglés (Nivel B1)</li>
+                        <li>Capacidad para leer y entender inglés técnico</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="education">
+        <div class="container">
+            <h2 class="section-title">Educación</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-year">2015-2019</span>
+                        <h3 class="timeline-title">Bachillerato en Ingeniería de sistemas Informáticos</h3>
+                        <p class="timeline-institution">Universidad Latina de Costa Rica</p>
+                        <p>SINAES, Carrera Acreditada</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-year">2004</span>
+                        <h3 class="timeline-title">Diplomado en Tecnologías de Desarrollo de Software</h3>
+                        <p class="timeline-institution">Universidad CENFOTEC</p>
+                        <p>Procesos de Ingeniería de Software</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-year">1992</span>
+                        <h3 class="timeline-title">Diplomado en Reparaciones Estructurales</h3>
+                        <p class="timeline-institution">Coopesa</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-year">1992</span>
+                        <h3 class="timeline-title">Diplomado en Mecánica General Básica de Aviación</h3>
+                        <p class="timeline-institution">Coopesa</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-year">1988</span>
+                        <h3 class="timeline-title">Bachiller en Educación Media</h3>
+                        <p class="timeline-institution">Liceo Santa Cruz</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="certifications">
+        <div class="container">
+            <h2 class="section-title">Certificaciones y Cursos</h2>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <div class="cert-header">
+                        <i class="fas fa-certificate fa-2x"></i>
+                    </div>
+                    <div class="cert-body">
+                        <h3 class="cert-title">Electricista</h3>
+                        <p class="cert-issuer">INA - Instituto Nacional de Aprendizaje</p>
+                        <p class="cert-date">2020</p>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-header">
+                        <i class="fas fa-certificate fa-2x"></i>
+                    </div>
+                    <div class="cert-body">
+                        <h3 class="cert-title">Scrum Master</h3>
+                        <p class="cert-issuer">International Scrum Institute</p>
+                        <p class="cert-date">2020</p>
+                        <p class="cert-id">AUTHORIZED CERTIFICATION ID: 71917400136124</p>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-header">
+                        <i class="fas fa-certificate fa-2x"></i>
+                    </div>
+                    <div class="cert-body">
+                        <h3 class="cert-title">Técnico en Administración de Bases de Datos DB2</h3>
+                        <p class="cert-issuer">Universidad CENFOTEC</p>
+                        <p class="cert-date">2015</p>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-header">
+                        <i class="fas fa-certificate fa-2x"></i>
+                    </div>
+                    <div class="cert-body">
+                        <h3 class="cert-title">Sun Certified Java Programmer (SCJP)</h3>
+                        <p class="cert-issuer">Sun Educational Services</p>
+                        <p class="cert-date">2007</p>
+                        <p>Sun Certified Programmer for the Java 2 Platform, Standard Edition 5.0.</p>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-header">
+                        <i class="fas fa-certificate fa-2x"></i>
+                    </div>
+                    <div class="cert-body">
+                        <h3 class="cert-title">Diseño Asistido por Computadora AutoCAD v. 14</h3>
+                        <p class="cert-issuer">Tecnológico de Costa Rica (TEC)</p>
+                        <p class="cert-date">1998</p>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-header">
+                        <i class="fas fa-certificate fa-2x"></i>
+                    </div>
+                    <div class="cert-body">
+                        <h3 class="cert-title">Diseño Asistido por Computadora AutoCAD v. 13</h3>
+                        <p class="cert-issuer">INA - Instituto Nacional de Aprendizaje</p>
+                        <p class="cert-date">1998</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h2>¡Contácteme!</h2>
+                <p>Estoy disponible para nuevas oportunidades y colaboraciones. No dude en contactarme para discutir
+                    cómo puedo aportar valor a su organización.</p>
+                <a href="mailto:hmbonilla@gmail.com" class="cta-button">Enviar Email</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
